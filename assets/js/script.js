@@ -20,9 +20,7 @@ function getAllLegos() {
             const themeArray = LEGO[themeName];
             for (let i = 0; i < themeArray.length; i++) {
                 allLegos.push(themeArray[i]);
-            }
-        }
-    }
+            }}}
     return allLegos;
 }
 
@@ -63,15 +61,51 @@ function renderGrid(containerId, legoList) {
     for (let i = 0; i < legoList.length; i++) {
         cardsHTML += createLegoCard(legoList[i]);
     }
-
     gridContainer.innerHTML = cardsHTML;
+}
+
+const LOGO_LIGHT = 'assets/img/logo_l.png';
+const LOGO_DARK = 'assets/img/logo_d.png';
+
+function applyTheme(theme) {
+    const body = document.body;
+    const isDark = theme == 'dark';
+    const logoImgs = [
+        document.getElementById('logo-img'), 
+        document.getElementById('custom-logo-img')
+    ];
+    const themeIcon = document.getElementById('theme-icon');
+    isDark ? body.setAttribute('data-bs-theme', 'dark') : body.removeAttribute('data-bs-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    const logoSrc = isDark ? LOGO_DARK : LOGO_LIGHT;
+    logoImgs.forEach(img => {
+        if (img) img.src = logoSrc;
+    });
+
+    if (themeIcon) {
+        themeIcon.classList.remove(isDark ? 'fa-sun-o' : 'fa-moon-o');
+        themeIcon.classList.add(isDark ? 'fa-moon-o' : 'fa-sun-o');
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const newTheme = currentTheme == 'light' ? 'dark' : 'light';
+    applyTheme(newTheme);
 }
 
 window.addEventListener('load', function () {
     const allLegos = getAllLegos();
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme == 'dark' ? 'dark' : 'light';
+    applyTheme(initialTheme); 
 
     window.addEventListener('scroll', handleScroll);
-
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
     const featuredLegos = allLegos.slice(0, 6);
     
     renderGrid('collections-grid', featuredLegos);
