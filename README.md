@@ -1,1 +1,1 @@
-# Art-Gallery
+# Lego Gallery
