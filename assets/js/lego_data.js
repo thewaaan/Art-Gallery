@@ -109,5 +109,116 @@ const LEGO = {
         "image": "assets/img/brickheadz/Potted Groot.webp",
         "theme": "brickheadz"
     }
+    ],
+    "art": [{
+        "title": "Vincent van Gogh - Sunflowers",
+        "description": "Make a 3D brick-built version of one of the world's most beloved paintings with the LEGO® Art Vincent van Gogh - Sunflowers (31215) wall art building set. Created in collaboration with the Van Gogh Museum in Amsterdam, which houses the world's largest Van Gogh collection and includes the original painting, this LEGO interpretation captures the beauty of the masterpiece he painted in Arles in 1889.",
+        "year": 2025,
+        "pieces": "2615pcs",
+        "item": "#31215",
+        "image": "assets/img/art/Vincent van Gogh - Sunflowers.webp",
+        "theme": "art"
+    },
+    {
+        "title": "The Milky Way Galaxy",
+        "description": "This awe-inspiring piece of art is created from 3,091 layered LEGO bricks and pieces to produce a 3D effect of incredible depth and texture. It includes some of the Milky Way's most famous points of interest, including Trappist-1, The Pleiades, The Crab Nebula and The Pillars of Creation. There is also a 'You are Here' tile to show the earth's place in the galaxy.",
+        "year": 2024,
+        "pieces": "3091pcs",
+        "item": "#31212",
+        "image": "assets/img/art/The Milky Way Galaxy.webp",
+        "theme": "art"
+    },
+    {
+        "title": "Mona Lisa",
+        "description": "This wall art is a treat for yourself or a home decor gift idea for men, women and art-lovers. It comes in a bluer hue to reflect the colors used by da Vinci over 500 years ago before the paint changed with age. The pieces printed with the Mona Lisa's famous eyes can be replaced with blank pieces for a more abstract appearance.",
+        "year": 2024,
+        "pieces": "1503pcs",
+        "item": "#31213",
+        "image": "assets/img/art/Mona Lisa.webp",
+        "theme": "art"
+    },
+    {
+        "title": "Hokusai - The Great Wave",
+        "description": "Lovers of art and classic paintings will adore this incredible LEGO® Art building set for adults. You can create a LEGO replica of one of the art world's most iconic works Hokusai's The Great Wave (31208). During the immersive building process, you can completely relax , and indulge in some creative joy and genuine mindfulness.",
+        "year": 2023,
+        "pieces": "1810pcs",
+        "item": "#31208",
+        "image": "assets/img/art/Hokusai - The Great Wave.webp",
+        "theme": "art"
+    }
+    ],
+    "disney": [{
+        "title": "Magic of Disney",
+        "description": "Capture some of the most enchanting scenes in the history of Disney animated movies with the LEGO® Ideas Magic of Disney build-and-display model kit for adults (21352). This LEGO building set makes a nostalgic gift for adult Disney movie-lovers, sparking happy childhood memories.",
+        "year": 2024,
+        "pieces": "1103pcs",
+        "item": "#21352",
+        "image": "assets/img/disney/Magic of Disney.webp",
+        "theme": "disney"
+    },
+    {
+        "title": "'Up' House",
+        "description": "Adventure awaits Disney fans aged 9 and up with this fun LEGO® | Disney and Pixar 'Up' House (43217). The set that everyone will be talking about includes a detailed section of the iconic house with a chimney and balloons, 2 LEGO minifigures, a LEGO dog figure, a wilderness explorer backpack and an adventure book.",
+        "year": 2023,
+        "pieces": "598pcs",
+        "item": "#43217",
+        "image": "assets/img/disney/Up House​.webp",
+        "theme": "disney"
+    },
+    {
+        "title": "Heihei",
+        "description": "Bring the fantasy and fun of Disney's Moana and Moana 2 into the real world with this posable Heihei (43272) LEGO® | Disney Moana 2 building kit toy. Animal fans, movie lovers and kids aged 9 and up will enjoy creating the colorful chicken companion buildable model, with a rotating head, posable wings and tail feathers, then standing him on his feet or placing him on the stand, complete with decorative flowers and a nameplate.",
+        "year": 2025,
+        "pieces": "566pcs",
+        "item": "#43272",
+        "image": "assets/img/disney/Heihei.webp",
+        "theme": "disney"
+    },
+    {
+        "title": "Disney Pixar Luxo Jr.",
+        "description": "Recreate the endearing, playful character from the first CGI animated film ever to be nominated for an Academy award with this collectible LEGO® Ideas | Disney Pixar Luxo Jr. building set for adults (21357). The buildable display model, which makes fantastic home office decor, is fully articulated to recreate the character's bouncing, hopping and rotating movements. The construction set also includes a buildable Disney Pixar ball that opens up to reveal hidden Easter eggs referencing popular Disney Pixar movies.",
+        "year": 2025,
+        "pieces": "613pcs",
+        "item": "#21357",
+        "image": "assets/img/disney/Disney Pixar Luxo Jr..webp",
+        "theme": "disney"
+    }
+    ],
+    "marvel": [{
+        "title": "Avengers Tower",
+        "description": "Recreate the most iconic building in the Avengers Universe with the LEGO® Marvel Avengers Tower (76269). This monumental build-and-display project for adult enthusiasts is packed with memorable scenes and classic characters. Celebrate Marvel Avengers on an epic scale Standing over 35.5 in. (90 cm) tall, this 5,201-piece model is filled to the roof with recognizable scenes from the MCU and populated by an all-star cast of characters.",
+        "year": 2023,
+        "pieces": "5201pcs",
+        "item": "#76269",
+        "image": "assets/img/marvel/Avengers Tower.webp",
+        "theme": "marvel"
+    },
+    {
+        "title": "Iron Man MK4 Bust",
+        "description": "LEGO® | Marvel Iron Man MK4 Bust (76327) is a celebration of one of the most popular characters in the Marvel Cinematic Universe. With 436 pieces and a sturdy base, this building set project yields an impressive collectible display piece that will delight experienced model-makers, Marvel fans and adult Super Hero enthusiasts.",
+        "year": 2025,
+        "pieces": "436pcs",
+        "item": "#76327",
+        "image": "assets/img/marvel/Iron Man MK4 Bust.webp",
+        "theme": "marvel"
+    },
+    {
+        "title": "Spider-Man Final Battle",
+        "description": "LEGO® Marvel Spider-Man Final Battle (76261) recreates the spectacular showdown from Marvel Studios' Spider-Man: No Way Home movie. Packed with iconic characters and web-slinging action, this stunning celebration of Spider-Man will captivate fans aged 10 and up.",
+        "year": 2023,
+        "pieces": "900pcs",
+        "item": "#76261",
+        "image": "assets/img/marvel/Spider-Man Final Battle.webp",
+        "theme": "marvel"
+    },
+    {
+        "title": "Infinity Gauntlet",
+        "description": "This LEGO brick recreation of the iconic Infinity Gauntlet featured in the Marvel Studios' Avengers: Infinity War and Avengers: Endgame movies is certain to attract attention and interest wherever it is displayed. With movable fingers, vibrantly colored Infinity Stones and a descriptive tablet attached to a sturdy base, this golden gauntlet provides an engrossing construction challenge and a finished model that will captivate all who see it.",
+        "year": 2021,
+        "pieces": "590pcs",
+        "item": "#76191",
+        "image": "assets/img/marvel/Infinity Gauntlet.webp",
+        "theme": "marvel"
+    }
     ]
 };
