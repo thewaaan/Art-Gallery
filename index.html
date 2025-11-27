@@ -14,7 +14,7 @@
     <link href="assets/css/for_darkness.css" rel="stylesheet">
 </head>
 
-<body data-bs-theme="light">
+<body id="body" data-bs-theme="light">
     <div id="landing-page" class="landing-page">
         <div class="landing-interaction">
             <div class="logo-display">
@@ -27,35 +27,33 @@
             </a>
         </div>
     </div>
-
     <div class="site-header-wrapper container-fluid sticky-top">
         <div class="gallery-header-inner mx-auto col-md-6 col-lg-6">
-            <div class="site-header row align-items-center">
-                <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start align-items-center mb-2 mb-md-0">
+            <div class="site-header row align-items-center blurry-bg">
+                <div class="col-12 col-md-4 d-flex flex-column flex-md-row justify-content-center justify-content-md-start align-items-center align-items-md-center py-2">
                     <div class="logo-display">
                         <img src="assets/img/logo.png" alt="Logo" id="custom-logo-img" class="img-fluid custom-logo" style="width: 100px; height:50px;">
                     </div>
                 </div>
                 <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end align-items-center">
-                    <div class="nav-links-wrapper d-flex me-3 align-items-center">
+                    <div class="nav-links-wrapper d-flex flex-wrap me-3 align-items-center">
                         <div class="dropdown nav-menu-item">
-                            <a class="nav-link-item mx-2 dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false" id="explore-dropdown">
+                            <a id="explore-dropdown" class="nav-link-item mx-2 dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" >
                                 EXPLORE
                             </a>
-                            <ul class="dropdown-menu" id="theme-list-menu">
+                            <ul id="theme-list-menu" class="dropdown-menu" >
                             </ul>
                         </div>
                         <a href="#gallery-footer" class="nav-link-item mx-2">MORE</a>
                         <button id="theme-toggle" class="btn btn-sm ms-2 mode-toggle-btn" aria-label="Toggle theme">
-                            <i class="fa fa-sun-o" id="theme-icon"></i>
+                            <i id="theme-icon" class="fa fa-sun-o" ></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="gallery-container container-fluid py-4 mt-vh-100">
         <div class="container">
             <div class="row mb-4">
@@ -74,8 +72,7 @@
             <div id="all-collections-grid" class="row g-4 pb-5">
                 <p class="text-center text-secondary fst-italic">Loading all colections...</p>
             </div>
-
-            <div id="gallery-footer" class="gallery-footer mt-5 pt-5 pb-5">
+            <div id="gallery-footer" class="gallery-footer mt-5 pt-5 pb-5 blurry-bg">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-md-10 text-center">
                         <p class="footer-text">
@@ -97,7 +94,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="assets/js/lego_data.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/function.js"></script>
 </body>
 
 </html>

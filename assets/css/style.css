@@ -74,11 +74,14 @@ h1, h2, h3, h4,
     padding-top: 15px;
 }
 
+.blurry-bg {
+    backdrop-filter: blur(60px) brightness(100%);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 .site-header {
     position: sticky;
     top: 0;
-    backdrop-filter: blur(60px) brightness(100%);
-    background-color: rgba(255, 255, 255, 0.4);
     border: unset;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 1rem 1rem;
@@ -183,13 +186,43 @@ h1, h2, h3, h4,
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.collection-card .card-image-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-aspect-ratio {
+    width: 100%;
+    padding-top: 75%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0; 
+}
+
+.description-text {
+    text-align: justify;
+    overflow: hidden;
+}
+
+.lego-title {
+    margin-bottom: 0.5rem;
+    max-height: 3em;
+    overflow: hidden; 
+}
+
+.lego-details {
+    line-height: 1.6;
+}
+
 .gallery-footer {
     border-top: 3px solid rgb(204, 0, 0);
     margin-top: 4rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    backdrop-filter: blur(60px) brightness(100%);
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }

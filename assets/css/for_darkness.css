@@ -11,10 +11,13 @@ body[data-bs-theme="dark"] h4 {
     color: rgb(255, 199, 44);
 }
 
-body[data-bs-theme="dark"] .site-header {
+body[data-bs-theme="dark"] .dark-blurry-bg {
     backdrop-filter: blur(60px) brightness(100%);
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+body[data-bs-theme="dark"] .site-header {
     border: 1px solid rgba(51, 51, 51, 0.2);
 }
 
@@ -84,7 +87,7 @@ body[data-bs-theme="dark"] .text-body-secondary {
 
 body[data-bs-theme="dark"] .gallery-footer {
     border-top: 3px solid rgb(255, 199, 44);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
 }
 
