@@ -1,9 +1,9 @@
 function handleScroll() {
-    const landingPage = document.getElementById('landing-page');
-    if (!landingPage) return;
-
-    const scrollThreshold = window.innerHeight * 1;
-
+    var landingPage = document.getElementById('landing-page');
+    if (!landingPage) {
+        return;
+    }
+    var scrollThreshold = window.innerHeight * 1;
     if (window.scrollY > scrollThreshold) {
         landingPage.style.opacity = '0';
         landingPage.style.pointerEvents = 'none';
@@ -14,102 +14,168 @@ function handleScroll() {
 }
 
 function getAllLegos() {
-    const allLegos = [];
-    for (const themeName in LEGO) {
-        if (Object.prototype.hasOwnProperty.call(LEGO, themeName)) {
-            const themeArray = LEGO[themeName];
-            for (let i = 0; i < themeArray.length; i++) {
+    var allLegos = [];
+    for (var themeName in LEGO) {
+        if (LEGO.hasOwnProperty(themeName)) {
+            var themeArray = LEGO[themeName];
+            for (var i = 0; i < themeArray.length; i++) {
                 allLegos.push(themeArray[i]);
             }}}
     return allLegos;
 }
 
-function createLegoCard(item) {
-    const detailsText = item.pieces ? item.pieces : (item.medium || 'N/A');
-    const detailsLabel = item.pieces ? 'Pieces: ' : 'Details: ';
+function renderThemeDropdown() {
+    var themeListMenu = document.getElementById('theme-list-menu');
+    if (!themeListMenu) {
+        return;
+    }
+    var allCollectionsHTML = '<li><a class="dropdown-item" href="#all-collections-title" data-theme="all">All Collections</a></li><li><hr class="dropdown-divider"></li>';
+    var themeLinksHTML = '';
+    var themes = [];
+    for (var key in LEGO) {
+        if (LEGO.hasOwnProperty(key)) {
+            themes.push(key);
+        }}
+    themes.sort();
+    for (var j = 0; j < themes.length; j++) {
+        var theme = themes[j];
+        var formattedTheme = theme.charAt(0).toUpperCase() + theme.slice(1);
+        themeLinksHTML += '<li><a class="dropdown-item" href="#all-collections-title" data-theme="' + theme + '">' + formattedTheme + '</a></li>';
+    }
+    themeListMenu.innerHTML = allCollectionsHTML + themeLinksHTML;
+    var themeLinks = themeListMenu.querySelectorAll('.dropdown-item');
+    for (var k = 0; k < themeLinks.length; k++) {
+        themeLinks[k].onclick = function (event) {
+            event.preventDefault(); 
+            var selectedTheme = this.getAttribute('data-theme');
+            if (selectedTheme === 'all') {
+                handleThemeSelection(null);
+            } else {
+                handleThemeSelection(selectedTheme);
+            }};
+    }
+}
 
-    return `
-        <div class="col-lg-3 col-md-6 mb-4" data-theme="${item.theme}">
-            <div class="card collection-card h-100">
-                <img src="${item.image}" class="card-img-top card-image-cover" alt="${item.title}" loading="lazy" 
-                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/CCCCCC/333333?text=Image+Error'">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title lego-title" style="color: #CC0000;">${item.title}</h5>
-                    <p class="card-text"><small class="text-body-secondary lego-details">${detailsLabel}${detailsText} (${item.year})</small></p>
-                    </div>
-            </div>
-        </div>
-    `;
+function handleThemeSelection(selectedTheme) {
+    var legosToDisplay = [];
+    var titleElement = document.getElementById('all-collections-title');
+    if (selectedTheme) {
+        legosToDisplay = LEGO[selectedTheme] || []; 
+        var formattedTitle = selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1);
+        titleElement.textContent = formattedTitle + ' COLLECTIONS';
+    } else {
+        legosToDisplay = getAllLegos();
+        titleElement.textContent = 'ALL COLLECTIONS';
+    }
+    renderGrid('all-collections-grid', legosToDisplay);
+    var allCollectionsSection = document.getElementById('all-collections-title');
+    if (allCollectionsSection) {
+        allCollectionsSection.scrollIntoView(); 
+    }
+}
+
+function createLegoCard(item) {
+    var detailsText = item.pieces ? item.pieces : (item.medium || 'N/A');
+    var detailsLabel = item.pieces ? 'Pieces: ' : 'Details: ';
+
+    var cardHTML = '<div class="col-lg-3 col-md-6 mb-4" data-theme="' + item.theme + '">';
+    cardHTML += '<div class="card collection-card h-100">';
+    cardHTML += '<img src="' + item.image + '" class="card-img-top card-image-cover" alt="' + item.title + '" loading="lazy" ';
+    cardHTML += 'onerror="this.onerror=null;this.src=\'https://placehold.co/400x300/CCCCCC/333333?text=Image+Error\'">';
+    cardHTML += '<div class="card-body d-flex flex-column">';
+    cardHTML += '<h5 class="card-title lego-title">' + item.title + '</h5>';
+    cardHTML += '<p class="card-text"><small class="text-body-secondary lego-details">' + detailsLabel + detailsText + ' (' + item.year + ')</small></p>';
+    cardHTML += '</div>';
+    cardHTML += '</div>';
+    cardHTML += '</div>';
+    
+    return cardHTML;
 }
 
 function renderGrid(containerId, legoList) {
-    const gridContainer = document.getElementById(containerId);
-    if (!gridContainer) return;
-
+    var gridContainer = document.getElementById(containerId);
+    if (!gridContainer) {
+        return;
+    }
     if (legoList.length === 0) {
         gridContainer.innerHTML = '<p class="text-center text-secondary fst-italic">No collections to display.</p>';
         return;
     }
 
     legoList.sort(function (a, b) {
-        if (a.title < b.title) { return -1; }
-        if (a.title > b.title) { return 1; }
+        if (a.title < b.title) { 
+            return -1; 
+        }
+        if (a.title > b.title) { 
+            return 1; 
+        }
         return 0;
     });
 
-    let cardsHTML = '';
-    for (let i = 0; i < legoList.length; i++) {
+    var cardsHTML = '';
+    for (var i = 0; i < legoList.length; i++) {
         cardsHTML += createLegoCard(legoList[i]);
     }
     gridContainer.innerHTML = cardsHTML;
 }
 
-const LOGO_LIGHT = 'assets/img/logo_l.png';
-const LOGO_DARK = 'assets/img/logo_d.png';
+var LOGO_LIGHT = 'assets/img/logo_l.png';
+var LOGO_DARK = 'assets/img/logo_d.png';
 
 function applyTheme(theme) {
-    const body = document.body;
-    const isDark = theme == 'dark';
-    const logoImgs = [
-        document.getElementById('logo-img'), 
-        document.getElementById('custom-logo-img')
-    ];
-    const themeIcon = document.getElementById('theme-icon');
-    isDark ? body.setAttribute('data-bs-theme', 'dark') : body.removeAttribute('data-bs-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    
-    const logoSrc = isDark ? LOGO_DARK : LOGO_LIGHT;
-    logoImgs.forEach(img => {
-        if (img) img.src = logoSrc;
-    });
+    var body = document.body;
+    var isDark = theme == 'dark';
+    var logoImg1 = document.getElementById('logo-img');
+    var logoImg2 = document.getElementById('custom-logo-img');
+    var themeIcon = document.getElementById('theme-icon');
 
+    if (isDark) {
+        body.setAttribute('data-bs-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.setAttribute('data-bs-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+    
+    var logoSrc = isDark ? LOGO_DARK : LOGO_LIGHT;
+    if (logoImg1) {
+        logoImg1.src = logoSrc;
+    }
+    if (logoImg2) {
+        logoImg2.src = logoSrc;
+    }
     if (themeIcon) {
-        themeIcon.classList.remove(isDark ? 'fa-sun-o' : 'fa-moon-o');
-        themeIcon.classList.add(isDark ? 'fa-moon-o' : 'fa-sun-o');
+        if (isDark) {
+            themeIcon.classList.remove('fa-sun-o');
+            themeIcon.classList.add('fa-moon-o');
+        } else {
+            themeIcon.classList.remove('fa-moon-o');
+            themeIcon.classList.add('fa-sun-o');
+        }
     }
 }
 
 function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    const newTheme = currentTheme == 'light' ? 'dark' : 'light';
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    var newTheme = (currentTheme == 'light') ? 'dark' : 'light';
     applyTheme(newTheme);
 }
 
-window.addEventListener('load', function () {
-    const allLegos = getAllLegos();
-    const savedTheme = localStorage.getItem('theme');
-    const initialTheme = savedTheme == 'dark' ? 'dark' : 'light';
+window.onload = function () {
+    var allLegos = getAllLegos();
+    var savedTheme = localStorage.getItem('theme');
+    var initialTheme = (savedTheme == 'dark') ? 'dark' : 'light';
     applyTheme(initialTheme); 
-
+    renderThemeDropdown();
     window.addEventListener('scroll', handleScroll);
-    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    var themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
     }
-    const featuredLegos = allLegos.slice(0, 6);
     
+    var featuredLegos = allLegos.slice(0, 8);
     renderGrid('collections-grid', featuredLegos);
     renderGrid('all-collections-grid', allLegos);
-
     handleScroll();
-});
+};

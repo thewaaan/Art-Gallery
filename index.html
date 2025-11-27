@@ -14,11 +14,11 @@
     <link href="assets/css/for_darkness.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-bs-theme="light">
     <div id="landing-page" class="landing-page">
         <div class="landing-interaction">
             <div class="logo-display">
-                <img src="assets/img/logo.png" alt="Logo" id="logo-img" class="img-fluid custom-logo"  style="width: 150px; height:75px;">
+                <img src="assets/img/logo.png" alt="Logo" id="logo-img" class="img-fluid custom-logo" style="width: 150px; height:75px;">
             </div>
             <a class="scroll-prompt">
                 <small>
@@ -33,13 +33,18 @@
             <div class="site-header row align-items-center">
                 <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start align-items-center mb-2 mb-md-0">
                     <div class="logo-display">
-                        <img src="assets/img/logo.png" alt="Logo" id="custom-logo-img" class="img-fluid custom-logo"  style="width: 100px; height:50px;">
+                        <img src="assets/img/logo.png" alt="Logo" id="custom-logo-img" class="img-fluid custom-logo" style="width: 100px; height:50px;">
                     </div>
                 </div>
                 <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end align-items-center">
                     <div class="nav-links-wrapper d-flex me-3 align-items-center">
-                        <div class="nav-menu-item">
-                            <a href="#all-collections" id="explore-link" class="nav-link-item mx-2">EXPLORE</a>
+                        <div class="dropdown nav-menu-item">
+                            <a class="nav-link-item mx-2 dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" id="explore-dropdown">
+                                EXPLORE
+                            </a>
+                            <ul class="dropdown-menu" id="theme-list-menu">
+                            </ul>
                         </div>
                         <a href="#gallery-footer" class="nav-link-item mx-2">MORE</a>
                         <button id="theme-toggle" class="btn btn-sm ms-2 mode-toggle-btn" aria-label="Toggle theme">
@@ -61,7 +66,7 @@
             <div id="collections-grid" class="row g-4 pb-5">
                 <p class="text-center text-secondary fst-italic">Loading featured colections...</p>
             </div>
-            <div id="all-collections" class="row mt-5 pt-5" >
+            <div id="all-collections" class="row mt-5 pt-5">
                 <div class="col-12">
                     <h3 id="all-collections-title" class="section-title collections-title">ALL COLLECTIONS</h3>
                 </div>

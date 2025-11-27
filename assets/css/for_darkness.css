@@ -26,6 +26,28 @@ body[data-bs-theme="dark"] .nav-link-item:hover {
     color: rgb(204, 0, 0);
 }
 
+body[data-bs-theme="dark"] .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(51, 51, 51, 0.5);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    list-style: none;
+}
+
+body[data-bs-theme="dark"] .dropdown-item {
+    color: rgb(224, 224, 224);
+}
+
+body[data-bs-theme="dark"] .dropdown-item:active, 
+body[data-bs-theme="dark"] .dropdown-item:focus, 
+body[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: rgb(255, 199, 44);
+    color: rgb(18, 18, 18); 
+}
+
+body[data-bs-theme="dark"] .dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 body[data-bs-theme="dark"] .mode-toggle-btn {
     color: rgb(255, 199, 44);
     border-color: rgb(255, 199, 44);
